@@ -1,54 +1,57 @@
-# Open Source Project Template
+# HelpDeskId
 
-This repository contains a template to seed a repository for an Open Source
-project.
+Generates identifiers that humans can exchange easily.
 
-## How to use this template
+The objective for this library is to be able to generate identifiers that can be communicated
+to humans in case of error.
+Some systems generate an Operation/Error Id (a GUID-like string), but it is usually
+rather cumbersome to communicate either orally or via a screenshot.
+This allows you to generate identifiers in the form of triplets of common words (e.g. "moon-shadow-list").
 
-1. Check out this repository
-2. Delete the `.git` folder
-3. Git init this repository and start working on your project!
-4. Prior to submitting your request for publication, make sure to review the
-   [Open Source guidelines for publications](https://nventive.visualstudio.com/Internal/_wiki/wikis/Internal_wiki?wikiVersion=GBwikiMaster&pagePath=%2FOpen%20Source%2FPublishing&pageId=7120).
-
-The following is the template for the final README.md file:
-
----
-
-# Project Title
-
-{Project tag line}
-
-{Small description of the purpose of the project}
+**Be aware though that these identifiers are not guaranteed to be unique. There are not a replacement for GUIDs.**
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 ## Getting Started
 
-{Instructions to quickly get started using the project: pre-requisites, packages
-to install, sample code, etc.}
+Install the package:
+
+```
+Install-Package HelpDeskId
+```
+
+```csharp
+var generator = new HelpDeskIdGenerator();
+
+// Generate an id using the CultureInfo.CurrentCulture if available with a fallback to english words.
+var helpDeskId = generator.GenerateReadableId(); // "desk-plastic-record"
+
+// Specify the source dictionary to use, in this case french words.
+helpDeskId = generator.GenerateReadableId(CultureInfo.GetCultureInfo("fr")); // "essayer-debut-avancer"
+```
 
 ## Features
 
-{More details/listing of features of the project}
+- The number of words and the separator can be customized in the constructor:
+```csharp
+var generator = new HelpDeskIdGenerator(numberOfWords: 2, separator: "/");
+var helpDeskId = generator.GenerateReadableId(); // "another/one"
+```
+
+- Currently, only english (default) and french ("fr") source words are supported (PR welcomed!).
+They represent common words in these languages, where swear words have been curated.
+The list can be customized by providing a `IWordsProvider` implementation.
 
 ## Changelog
 
-Please consult the [CHANGELOG](CHANGELOG.md) for more information about version
-history.
+Please consult the [CHANGELOG](CHANGELOG.md) for more information about version history.
 
 ## License
 
-This project is licensed under the Apache 2.0 license - see the
-[LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 license - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the process for
-contributing to this project.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the process for contributing to this project.
 
 Be mindful of our [Code of Conduct](CODE_OF_CONDUCT.md).
-
-## Acknowledgments
-
-{List similar projects, inspirations, etc. related to this project.}

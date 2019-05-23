@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- `HelpDeskIdGenerator` to orchestrate ID generation
+- `ResourcesWordsProvider` with resources in English & French
+
 ### Changed
 
 ### Deprecated
