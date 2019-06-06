@@ -9,14 +9,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		azure-pipelines.yml = azure-pipelines.yml
 		Directory.Build.props = Directory.Build.props
+		GitVersion.yml = GitVersion.yml
 		GlobalSuppressions.cs = GlobalSuppressions.cs
 		README.md = README.md
 		stylecop.json = stylecop.json
 		TestsSuppressions.cs = TestsSuppressions.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDeskId.Tests", "HelpDeskId.Tests\HelpDeskId.Tests.csproj", "{D585341B-2FF9-48F7-8ED1-2B8B2E19AEF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelpDeskId.Tests", "HelpDeskId.Tests\HelpDeskId.Tests.csproj", "{D585341B-2FF9-48F7-8ED1-2B8B2E19AEF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
