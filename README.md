@@ -11,6 +11,8 @@ This allows you to generate identifiers in the form of triplets of common words 
 **Be aware though that these identifiers are not guaranteed to be unique. There are not a replacement for GUIDs.**
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Build Status](https://dev.azure.com/nventive-public/nventive/_apis/build/status/nventive.HelpDeskId?branchName=master)](https://dev.azure.com/nventive-public/nventive/_build/latest?definitionId=2&branchName=master)
+![Nuget](https://img.shields.io/nuget/v/HelpDeskId.svg)
 
 ## Getting Started
 
