@@ -26,7 +26,7 @@ namespace HelpDeskId
         /// <inheritdoc />
         public IEnumerable<string> GetWords(int numberOfWords, CultureInfo cultureInfo)
         {
-            var words = GetResources(cultureInfo);
+            var words = GetResources(cultureInfo ?? CultureInfo.CurrentCulture);
             var pickedWords = new string[numberOfWords];
             for (var i = 0; i < numberOfWords; i++)
             {
