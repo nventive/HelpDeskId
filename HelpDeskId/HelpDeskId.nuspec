@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>HelpDeskId</id>
+    <version>1.0.0</version>
+    <title>HelpDeskId</title>
+    <authors>nventive</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <iconUrl>https://nventive-email-assets.s3.amazonaws.com/packages/nv-package-logo%400%2C25x.png</iconUrl>
+    <icon>images\icon.png</icon>
+    <projectUrl>https://github.com/nventive/HelpDeskId</projectUrl>
+    <repository type="git" url="https://github.com/nventive/HelpDeskId" />
+    <description>Generates IDs that are easily communicated to Help Desks.</description>
+    <copyright>Copyright (c) 2020, nventive</copyright>
+    <packageTypes>
+       <packageType name="Dependency" />
+    </packagesTypes>
+  </metadata>
+  <files>
+    <file src="**" exclude="**\bin\**\*;**\obj\**\*;**\.vs\**\*;**\*.user;**\*.lock.json;**\package-lock.json" />
+    <file src="..\icon.png" target="images\" />
+  </files>
+</package>
