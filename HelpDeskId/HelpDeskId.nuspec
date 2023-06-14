@@ -15,7 +15,7 @@
     <copyright>Copyright (c) 2020, nventive</copyright>
     <packageTypes>
        <packageType name="Dependency" />
-    </packagesTypes>
+    </packageTypes>
   </metadata>
   <files>
     <file src="**" exclude="**\bin\**\*;**\obj\**\*;**\.vs\**\*;**\*.user;**\*.lock.json;**\package-lock.json" />
