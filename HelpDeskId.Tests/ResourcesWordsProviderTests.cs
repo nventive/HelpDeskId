@@ -17,8 +17,10 @@ namespace HelpDeskId.Tests
                 new object[] { CultureInfo.GetCultureInfo("fr-CA"), 4 },
             };
 
+#pragma warning disable CA1825
         [Theory]
         [MemberData(nameof(ItShouldProvideWordsData))]
+#pragma warning restore CA1825
         public void ItShouldProvideWords(CultureInfo cultureInfo, int numberOfWords)
         {
             var resources = new ResourcesWordsProvider();
