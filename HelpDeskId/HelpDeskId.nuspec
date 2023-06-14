@@ -13,6 +13,9 @@
     <repository type="git" url="https://github.com/nventive/HelpDeskId" />
     <description>Generates IDs that are easily communicated to Help Desks.</description>
     <copyright>Copyright (c) 2020, nventive</copyright>
+    <packageTypes>
+       <packageType name="Dependency" />
+    </packagesTypes>
   </metadata>
   <files>
     <file src="**" exclude="**\bin\**\*;**\obj\**\*;**\.vs\**\*;**\*.user;**\*.lock.json;**\package-lock.json" />
