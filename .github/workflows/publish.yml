@@ -13,7 +13,10 @@ jobs:
       uses: actions/checkout@v3
     
     - name: Build NuGet Package
-      run: dotnet pack -Version ${GITHUB_REF#refs/tags/v} --configuration Release --output $GITHUB_WORKSPACE/artifacts
+      run: dotnet pack -Version ${GITHUB_REF#refs/tags/v} --configuration Release --output ./artifacts -v debug
+
+    - name: Lslogs
+      run: ls ./artifacts
 
     - name: Publish NuGet package
       run: dotnet nuget push "$GITHUB_WORKSPACE/artifacts/HelpDeskId.*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
