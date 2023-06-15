@@ -11,12 +11,21 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: pwdlogs1
+      run : pwd
+
+    - name: lslogs1
+      run : ls
     
     - name: Build NuGet Package
-      run: dotnet pack -Version ${GITHUB_REF#refs/tags/v} --configuration Release --output ./artifacts -v diag
+      run: dotnet pack -Version ${GITHUB_REF#refs/tags/v} --configuration Release -v diag
 
-    - name: Lslogs
-      run: ls ./artifacts
+    - name: pwdlogs2
+      run : pwd
+      
+    - name: lslogs2
+      run : ls
 
     - name: Publish NuGet package
-      run: dotnet nuget push "$GITHUB_WORKSPACE/artifacts/HelpDeskId.*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push artifacts/HelpDeskId.*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
