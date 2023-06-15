@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v3
     
     - name: Build NuGet Package
-      run: dotnet pack -Version ${GITHUB_REF#refs/tags/v} --configuration Release --output ./artifacts -v debug
+      run: dotnet pack -Version ${GITHUB_REF#refs/tags/v} --configuration Release --output ./artifacts -v diag
 
     - name: Lslogs
       run: ls ./artifacts
