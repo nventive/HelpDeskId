@@ -10,8 +10,8 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
     <NoWarn>1701;1702;1998</NoWarn>
-    <PackageIconUrl>https://nventive-email-assets.s3.amazonaws.com/packages/nv-package-logo%400%2C25x.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/nventive/HelpDeskId</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
 
@@ -25,7 +25,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
+<ItemGroup>
+<None Include="../icon.png" Pack="true" PackagePath="\"/>
+</ItemGroup>
   <ItemGroup>
     <Compile Include="..\GlobalSuppressions.cs" Link="Properties\GlobalSuppressions.cs" />
     <AdditionalFiles Include="..\stylecop.json" Link="Properties\stylecop.json" />
