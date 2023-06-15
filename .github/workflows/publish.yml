@@ -16,4 +16,4 @@ jobs:
       run: dotnet pack --no-build -Version ${GITHUB_REF#refs/tags/v} --configuration Release --output artifacts
 
     - name: Publish NuGet package
-      run: nuget push ./artifacts/HelpDeskId.*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
+      run: nuget push artifacts/HelpDeskId.*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
