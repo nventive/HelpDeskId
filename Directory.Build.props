@@ -24,11 +24,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-<ItemGroup>
-<None Include="../icon.png" Pack="true" PackagePath="\"/>
-</ItemGroup>
-  <ItemGroup>
+    <None Include="../icon.png" Pack="true" PackagePath="\"/>
     <Compile Include="..\GlobalSuppressions.cs" Link="Properties\GlobalSuppressions.cs" />
     <AdditionalFiles Include="..\stylecop.json" Link="Properties\stylecop.json" />
   </ItemGroup>
