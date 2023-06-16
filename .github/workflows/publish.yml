@@ -13,7 +13,9 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Build NuGet Package
-      run: dotnet pack HelpDeskId/HelpDeskId.csproj -version ${GITHUB_REF#refs/tags/v} --configuration Release --output .
+      working-directory: ./HelpDeskId
+      run: dotnet pack  -version ${GITHUB_REF#refs/tags/v} --configuration Release --output .
     
     - name: Publish NuGet package
+      working-directory: ./HelpDeskId
       run: dotnet nuget push HelpDeskId.${GITHUB_REF#refs/tags/v}.nupkg --api-key aaaa --source https://api.nuget.org/v3/index.json
