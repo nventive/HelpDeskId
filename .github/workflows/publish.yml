@@ -14,7 +14,7 @@ jobs:
 
     - name: Build NuGet Package
       working-directory: ./HelpDeskId
-      run: dotnet pack  -version ${GITHUB_REF#refs/tags/v} --configuration Release --output .
+      run: dotnet pack -version ${GITHUB_REF#refs/tags/v} --configuration Release --output .
     
     - name: Publish NuGet package
       working-directory: ./HelpDeskId
