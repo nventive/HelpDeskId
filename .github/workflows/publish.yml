@@ -12,29 +12,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: pwd1
-      run: pwd
-
-    - name: ls1
-      run: ls
-
-    - name: GotoProjectDirectory
-      run: cd HelpDeskId
-
-    - name: pwd2
-      run: pwd
-
-    - name: ls2
-      run: ls
-
     - name: Build NuGet Package
-      run: dotnet pack -version ${GITHUB_REF#refs/tags/v} --configuration Release
+      run: dotnet pack HelpDeskId/HelpDeskId.csproj -version ${GITHUB_REF#refs/tags/v} --configuration Release --output .
     
-    - name: pwd3
-      run: pwd
-
-    - name: ls3
-      run: ls
-
     - name: Publish NuGet package
-      run: dotnet nuget push HelpDeskId.*.nupkg --api-key aaaa --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push HelpDeskId.${GITHUB_REF#refs/tags/v}.nupkg --api-key aaaa --source https://api.nuget.org/v3/index.json
